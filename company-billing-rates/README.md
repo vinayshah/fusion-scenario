@@ -15,6 +15,40 @@ Reads "company rates" records from a Planning workspace and upserts them into Wo
 
 `company_rate_blueprint-302403.json`
 
+## API Reference
+
+The scenario uses two Workfront API calls against the `RATE` endpoint (PUT method).
+
+### setRatesForRole — create a new billing rate
+
+Used when no existing rate exists for the company + role combination.
+
+See [`sample_setRatesForRole_request.json`](./sample_setRatesForRole_request.json) for a full example.
+
+| Field | Description |
+|-------|-------------|
+| `attachableID` | Workfront Company ID |
+| `attachableObjCode` | Always `CMPY` |
+| `roleID` | Workfront Job Role ID |
+| `rates[].type` | Always `BILLING` |
+| `rates[].value` | Billing rate amount |
+| `rates[].startDate` | Rate effective start date (`null` = no start) |
+| `rates[].endDate` | Rate effective end date (`null` = open-ended) |
+| `currencyCode` | Currency (e.g. `USD`) |
+
+### editRatesForRole — update an existing billing rate
+
+Used when a rate already exists. Closes out the previous rate's `endDate` and appends the new rate with a `startDate`.
+
+See [`sample_editRatesForRole_request.json`](./sample_editRatesForRole_request.json) for a full example.
+
+| Field | Description |
+|-------|-------------|
+| `rates[].ID` | ID of the existing `RATE` record to update |
+| `rates[].endDate` | Set to `startDate - 1 day` of the new rate to close it out |
+| `rates[].containOverlap` | Always `false` |
+| New rate entry | Same shape as `setRatesForRole` but includes `startDate` |
+
 ## Data Model (Planning → Workfront)
 
 | Planning Field | Workfront Field |

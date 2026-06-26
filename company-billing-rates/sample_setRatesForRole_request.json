@@ -1,0 +1,20 @@
+{
+  "endpoint": "RATE",
+  "method": "PUT",
+  "action": "setRatesForRole",
+  "body": {
+    "attachableID": "companyID",
+    "attachableObjCode": "CMPY",
+    "roleID": "roleID",
+    "rates": [
+      {
+        "roleID": "roleID",
+        "startDate": null,
+        "endDate": null,
+        "type": "BILLING",
+        "value": "90"
+      }
+    ],
+    "currencyCode": "USD"
+  }
+}

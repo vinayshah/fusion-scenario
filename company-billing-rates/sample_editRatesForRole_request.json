@@ -1,0 +1,40 @@
+{
+  "endpoint": "RATE",
+  "method": "PUT",
+  "action": "editRatesForRole",
+  "body": {
+    "attachableID": "companyID",
+    "attachableObjCode": "CMPY",
+    "roleID": "roleID",
+    "rates": [
+      {
+        "ID": "billingRateID",
+        "displayName": "Art/Creative Director Rate",
+        "name": "Art/Creative Director Rate",
+        "objCode": "RATE",
+        "type": "BILLING",
+        "value": "90.00",
+        "startDate": null,
+        "endDate": "2026-07-05",
+        "projectID": null,
+        "localCurrency": null,
+        "role": {
+          "ID": "roleID",
+          "name": "Art/Creative Director",
+          "objCode": "ROLE",
+          "billingPerHour": null
+        },
+        "containOverlap": false
+      },
+      {
+        "roleID": "roleID",
+        "startDate": "2026-07-06",
+        "endDate": null,
+        "containOverlap": false,
+        "type": "BILLING",
+        "value": "600"
+      }
+    ],
+    "currencyCode": "USD"
+  }
+}
