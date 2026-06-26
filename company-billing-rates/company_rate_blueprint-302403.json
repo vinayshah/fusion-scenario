@@ -1,0 +1,1742 @@
+{
+    "name": "COMPANY RATE | V2",
+    "flow": [
+        {
+            "id": 6,
+            "module": "workfront-maestro:searchRecords2",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 94619
+            },
+            "mapper": {
+                "limit": "200",
+                "workspaceID": "Ws67f6a2f3a925c1378f35b9fe",
+                "recordTypeId": "Rt6a3d7720ae9ca36a2d437fa5",
+                "filtersCondition": "$and",
+                "F6a3d7720ae9ca36a2d437fa6": {},
+                "F6a3d7720ae9ca36a2d437fa8": {},
+                "F6a3d7720ae9ca36a2d437fa9": {},
+                "F6a3d774bae9ca36a2d43865f": {},
+                "F6a3d781bae9ca36a2d43b029": {
+                    "isComplexField": "true"
+                },
+                "F6a3d782092258dc1a1f679fb": {
+                    "isComplexField": "true"
+                },
+                "F6a3d783cdc06e28724745039": {
+                    "operator": "$isNotEmpty"
+                }
+            },
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 600,
+                    "name": "Billing Rates in Planning"
+                },
+                "restore": {
+                    "__IMTCONN__": {
+                        "label": "CAFE Workfront (Vinay Shah | cafe.my.workfront.com)"
+                    },
+                    "workspaceID": {
+                        "mode": "chose",
+                        "label": "Vinay Shah WorkSpace"
+                    },
+                    "recordTypeId": {
+                        "mode": "chose",
+                        "label": "company rates"
+                    },
+                    "filtersCondition": {
+                        "mode": "chose",
+                        "label": "AND"
+                    },
+                    "F6a3d7720ae9ca36a2d437fa6": {
+                        "nested": {
+                            "operator": {
+                                "mode": "chose",
+                                "label": ""
+                            }
+                        }
+                    },
+                    "F6a3d7720ae9ca36a2d437fa8": {
+                        "nested": {
+                            "operator": {
+                                "mode": "chose",
+                                "label": ""
+                            }
+                        }
+                    },
+                    "F6a3d7720ae9ca36a2d437fa9": {
+                        "nested": {
+                            "operator": {
+                                "mode": "chose",
+                                "label": ""
+                            }
+                        }
+                    },
+                    "F6a3d774bae9ca36a2d43865f": {
+                        "nested": {
+                            "operator": {
+                                "mode": "chose",
+                                "label": ""
+                            }
+                        }
+                    },
+                    "F6a3d781bae9ca36a2d43b029": {
+                        "nested": {
+                            "operator": {
+                                "mode": "chose",
+                                "label": ""
+                            }
+                        }
+                    },
+                    "F6a3d782092258dc1a1f679fb": {
+                        "nested": {
+                            "operator": {
+                                "mode": "chose",
+                                "label": ""
+                            }
+                        }
+                    },
+                    "F6a3d783cdc06e28724745039": {
+                        "nested": {
+                            "operator": {
+                                "mode": "chose",
+                                "label": "Is Not Empty"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account",
+                        "label": "Connection",
+                        "mappable": false,
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "workspaceID",
+                        "type": "select",
+                        "label": "Workspace",
+                        "mappable": true,
+                        "required": true
+                    },
+                    {
+                        "name": "recordTypeId",
+                        "type": "select",
+                        "label": "Record type",
+                        "mappable": true,
+                        "required": true
+                    },
+                    {
+                        "name": "F6a3d783cdc06e28724745039",
+                        "spec": [
+                            {
+                                "name": "operator",
+                                "type": "select",
+                                "label": "Operator",
+                                "mappable": true,
+                                "multiple": false,
+                                "validate": {
+                                    "enum": [
+                                        "$is",
+                                        "$isNot",
+                                        "$greaterThan",
+                                        "$greaterThanOrEqual",
+                                        "$lessThan",
+                                        "$lessThanOrEqual",
+                                        "$isEmpty",
+                                        "$isNotEmpty"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "value",
+                                "type": "number",
+                                "label": "Value",
+                                "mappable": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "rate"
+                    },
+                    {
+                        "name": "F6a3d7720ae9ca36a2d437fa9",
+                        "spec": [
+                            {
+                                "name": "operator",
+                                "type": "select",
+                                "label": "Operator",
+                                "mappable": true,
+                                "multiple": false,
+                                "validate": {
+                                    "enum": [
+                                        "$is",
+                                        "$isNot",
+                                        "$isAfter",
+                                        "$isBefore",
+                                        "$isBetween",
+                                        "$isNotBetween",
+                                        "$isEmpty",
+                                        "$isNotEmpty"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value",
+                                "mappable": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "End Date"
+                    },
+                    {
+                        "name": "F6a3d781bae9ca36a2d43b029",
+                        "spec": [
+                            {
+                                "name": "operator",
+                                "type": "select",
+                                "label": "Operator",
+                                "mappable": true,
+                                "multiple": false,
+                                "validate": {
+                                    "enum": [
+                                        "$hasAnyOf",
+                                        "$hasAllOf",
+                                        "$isExactly",
+                                        "$hasNoneOf",
+                                        "$isEmpty",
+                                        "$isNotEmpty"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value",
+                                "mappable": true
+                            },
+                            {
+                                "name": "isComplexField",
+                                "type": "hidden",
+                                "mappable": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Job Roles"
+                    },
+                    {
+                        "name": "F6a3d7720ae9ca36a2d437fa8",
+                        "spec": [
+                            {
+                                "name": "operator",
+                                "type": "select",
+                                "label": "Operator",
+                                "mappable": true,
+                                "multiple": false,
+                                "validate": {
+                                    "enum": [
+                                        "$is",
+                                        "$isNot",
+                                        "$isAfter",
+                                        "$isBefore",
+                                        "$isBetween",
+                                        "$isNotBetween",
+                                        "$isEmpty",
+                                        "$isNotEmpty"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value",
+                                "mappable": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Start Date"
+                    },
+                    {
+                        "name": "F6a3d774bae9ca36a2d43865f",
+                        "spec": [
+                            {
+                                "name": "operator",
+                                "type": "select",
+                                "label": "Operator",
+                                "mappable": true,
+                                "multiple": false,
+                                "validate": {
+                                    "enum": [
+                                        "$contains",
+                                        "$doesNotContain",
+                                        "$is",
+                                        "$isNot",
+                                        "$isEmpty",
+                                        "$isNotEmpty"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value",
+                                "mappable": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Company ID"
+                    },
+                    {
+                        "name": "F6a3d7720ae9ca36a2d437fa6",
+                        "spec": [
+                            {
+                                "name": "operator",
+                                "type": "select",
+                                "label": "Operator",
+                                "mappable": true,
+                                "multiple": false,
+                                "validate": {
+                                    "enum": [
+                                        "$contains",
+                                        "$doesNotContain",
+                                        "$is",
+                                        "$isNot",
+                                        "$isEmpty",
+                                        "$isNotEmpty"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value",
+                                "mappable": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Name"
+                    },
+                    {
+                        "name": "F6a3d782092258dc1a1f679fb",
+                        "spec": [
+                            {
+                                "name": "operator",
+                                "type": "select",
+                                "label": "Operator",
+                                "mappable": true,
+                                "multiple": false
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value",
+                                "mappable": true
+                            },
+                            {
+                                "name": "isComplexField",
+                                "type": "hidden",
+                                "mappable": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Role ID (from Job Roles)"
+                    },
+                    {
+                        "name": "filtersCondition",
+                        "type": "select",
+                        "label": "Condition for filters",
+                        "mappable": true,
+                        "validate": {
+                            "enum": [
+                                "$or",
+                                "$and"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "type": "number",
+                        "label": "Limit",
+                        "mappable": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 28,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 600
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 23,
+                            "module": "util:SetVariables",
+                            "version": 1,
+                            "parameters": {},
+                            "filter": {
+                                "name": "Build Array for New Entries",
+                                "conditions": []
+                            },
+                            "mapper": {
+                                "scope": "roundtrip",
+                                "variables": [
+                                    {
+                                        "name": "startDate",
+                                        "value": "{{formatDate(6.record.data.`Start Date`; \"YYYY-MM-DD\")}}"
+                                    },
+                                    {
+                                        "name": "type",
+                                        "value": "BILLING"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "value": "{{number(6.record.data.rate)}}"
+                                    }
+                                ]
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 0
+                                },
+                                "restore": {
+                                    "scope": {
+                                        "label": "One cycle"
+                                    },
+                                    "variables": {
+                                        "items": [
+                                            "undefined",
+                                            "undefined",
+                                            "undefined"
+                                        ]
+                                    }
+                                },
+                                "expect": [
+                                    {
+                                        "name": "variables",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Variable name",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "type": "any",
+                                                "label": "Variable value"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Variables",
+                                        "mappable": false
+                                    },
+                                    {
+                                        "name": "scope",
+                                        "type": "select",
+                                        "label": "Variable lifetime",
+                                        "mappable": false,
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "roundtrip",
+                                                "execution"
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "startDate",
+                                        "type": "any",
+                                        "label": "startDate"
+                                    },
+                                    {
+                                        "name": "type",
+                                        "type": "any",
+                                        "label": "type"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "type": "any",
+                                        "label": "value"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 22,
+                            "module": "builtin:BasicAggregator",
+                            "version": 1,
+                            "parameters": {
+                                "feeder": 28
+                            },
+                            "mapper": {
+                                "startDate": "{{23.startDate}}",
+                                "type": "{{23.type}}",
+                                "value": "{{23.value}}"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 900,
+                                    "y": 0
+                                },
+                                "restore": {
+                                    "feeder": {
+                                        "label": "Router [28]"
+                                    },
+                                    "target": {
+                                        "label": "Custom"
+                                    },
+                                    "mapper": {
+                                        "label": [
+                                            null,
+                                            null,
+                                            null
+                                        ]
+                                    }
+                                },
+                                "advanced": true
+                            },
+                            "flags": {
+                                "groupBy": "{{6.record.data.`Role ID (from Job Roles)`[]}}"
+                            }
+                        },
+                        {
+                            "id": 29,
+                            "module": "util:SetVariable2",
+                            "version": 1,
+                            "parameters": {},
+                            "mapper": {
+                                "name": "new_value",
+                                "scope": "roundtrip",
+                                "value": "{{22.array}}"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1200,
+                                    "y": 0
+                                },
+                                "restore": {
+                                    "scope": {
+                                        "label": "One cycle"
+                                    }
+                                },
+                                "expect": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Variable name",
+                                        "mappable": false,
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "scope",
+                                        "type": "select",
+                                        "label": "Variable lifetime",
+                                        "mappable": false,
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "roundtrip",
+                                                "execution"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "value",
+                                        "type": "any",
+                                        "label": "Variable value",
+                                        "mappable": false
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "new_value",
+                                        "type": "any",
+                                        "label": "new_value"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 15,
+                            "module": "workfront-workfront:searchv3",
+                            "version": 2,
+                            "parameters": {
+                                "__IMTCONN__": 94619
+                            },
+                            "filter": {
+                                "name": "Check for Existing Billing Rates",
+                                "conditions": []
+                            },
+                            "mapper": {
+                                "limit": "200",
+                                "fields": [
+                                    "ID",
+                                    "endDate",
+                                    "objID",
+                                    "objObjCode",
+                                    "roleID",
+                                    "securityRootID",
+                                    "securityRootObjCode",
+                                    "startDate",
+                                    "type",
+                                    "value"
+                                ],
+                                "criteria": [
+                                    [
+                                        {
+                                            "a": "companyID",
+                                            "b": "{{6.record.data.`Company ID`}}",
+                                            "o": "cieq"
+                                        },
+                                        {
+                                            "a": "roleID",
+                                            "b": "{{6.record.data.`Role ID (from Job Roles)`[]}}",
+                                            "o": "cieq"
+                                        }
+                                    ]
+                                ],
+                                "result_set": "all",
+                                "object_code": "RATE",
+                                "search_fields": [
+                                    "companyID",
+                                    "roleID"
+                                ]
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 750
+                                },
+                                "restore": {
+                                    "fields": {
+                                        "mode": "chose",
+                                        "label": [
+                                            null,
+                                            null,
+                                            null,
+                                            null,
+                                            null,
+                                            null,
+                                            null,
+                                            null,
+                                            null,
+                                            null
+                                        ]
+                                    },
+                                    "references": {
+                                        "mode": "chose"
+                                    },
+                                    "result_set": {
+                                        "mode": "chose",
+                                        "label": "All Matching Records"
+                                    },
+                                    "__IMTCONN__": {
+                                        "label": "CAFE Workfront (Vinay Shah | cafe.my.workfront.com)"
+                                    },
+                                    "collections": {
+                                        "mode": "chose"
+                                    },
+                                    "object_code": {
+                                        "mode": "chose",
+                                        "label": "Billing Rate"
+                                    },
+                                    "search_fields": {
+                                        "mode": "chose",
+                                        "label": [
+                                            null,
+                                            null
+                                        ]
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account",
+                                        "label": "Connection",
+                                        "mappable": false,
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "object_code",
+                                        "type": "select",
+                                        "label": "Record Type",
+                                        "mappable": true,
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "ARVPRC",
+                                                "ASSGN",
+                                                "BLIN",
+                                                "BILL",
+                                                "RATE",
+                                                "CMPY",
+                                                "DOCU",
+                                                "DOCFDR",
+                                                "DOCV",
+                                                "EXRATE",
+                                                "EXPNS",
+                                                "EXPTYP",
+                                                "GROUP",
+                                                "HOUR",
+                                                "HOURT",
+                                                "OPTASK",
+                                                "ITRN",
+                                                "ROLE",
+                                                "JRNLE",
+                                                "MILE",
+                                                "MPATH",
+                                                "NOTE",
+                                                "NTAG",
+                                                "PORT",
+                                                "PRGM",
+                                                "PROJ",
+                                                "PRTU",
+                                                "RESVT",
+                                                "RISK",
+                                                "RSKTYP",
+                                                "SPAPVR",
+                                                "TASK",
+                                                "TEAMOB",
+                                                "Template",
+                                                "TTSK",
+                                                "TSHET",
+                                                "USER",
+                                                "USRDEL"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "result_set",
+                                        "type": "select",
+                                        "label": "Result set",
+                                        "mappable": true,
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "first",
+                                                "all"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "search_fields",
+                                        "type": "select",
+                                        "label": "Search criteria fields",
+                                        "mappable": true,
+                                        "multiple": true,
+                                        "validate": false
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "type": "select",
+                                        "label": "Outputs",
+                                        "mappable": true,
+                                        "multiple": true,
+                                        "required": true,
+                                        "validate": false
+                                    },
+                                    {
+                                        "name": "references",
+                                        "type": "select",
+                                        "label": "References",
+                                        "dynamic": true,
+                                        "mappable": true,
+                                        "multiple": true,
+                                        "validate": false
+                                    },
+                                    {
+                                        "name": "collections",
+                                        "type": "select",
+                                        "label": "Collections",
+                                        "dynamic": true,
+                                        "mappable": true,
+                                        "multiple": true,
+                                        "validate": false
+                                    },
+                                    {
+                                        "name": "limit",
+                                        "type": "number",
+                                        "label": "Maximal",
+                                        "mappable": true,
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "criteria",
+                                        "type": "filter",
+                                        "label": "Search criteria",
+                                        "options": {
+                                            "store": [
+                                                {
+                                                    "label": "Company ID",
+                                                    "value": "companyID"
+                                                },
+                                                {
+                                                    "label": "Role ID",
+                                                    "value": "roleID"
+                                                }
+                                            ],
+                                            "operators": [
+                                                {
+                                                    "label": "Basic Operators",
+                                                    "options": [
+                                                        {
+                                                            "label": "Exist",
+                                                            "value": "notnull"
+                                                        },
+                                                        {
+                                                            "label": "Does not exist",
+                                                            "value": "isnull"
+                                                        },
+                                                        {
+                                                            "label": "Equal to",
+                                                            "value": "eq"
+                                                        },
+                                                        {
+                                                            "label": "Equal to (case insensitive)",
+                                                            "value": "cieq"
+                                                        },
+                                                        {
+                                                            "label": "Not Equal to",
+                                                            "value": "ne"
+                                                        },
+                                                        {
+                                                            "label": "Contains",
+                                                            "value": "contains"
+                                                        },
+                                                        {
+                                                            "label": "Not contains",
+                                                            "value": "notcontains"
+                                                        },
+                                                        {
+                                                            "label": "Contains (case insensitive)",
+                                                            "value": "cicontains"
+                                                        },
+                                                        {
+                                                            "label": "Not Contains (case insensitive)",
+                                                            "value": "cinotcontains"
+                                                        },
+                                                        {
+                                                            "label": "Contains any (case insensitive)",
+                                                            "value": "cicontainsany"
+                                                        },
+                                                        {
+                                                            "label": "Contains all (case insensitive)",
+                                                            "value": "cicontainsall"
+                                                        },
+                                                        {
+                                                            "label": "Greater than",
+                                                            "value": "gt"
+                                                        },
+                                                        {
+                                                            "label": "Greater than (case insensitive)",
+                                                            "value": "cigt"
+                                                        },
+                                                        {
+                                                            "label": "Less than",
+                                                            "value": "lt"
+                                                        },
+                                                        {
+                                                            "label": "Less than (case insensitive)",
+                                                            "value": "cilt"
+                                                        },
+                                                        {
+                                                            "label": "Greater than or equal",
+                                                            "value": "gte"
+                                                        },
+                                                        {
+                                                            "label": "Less than or equal",
+                                                            "value": "lte"
+                                                        },
+                                                        {
+                                                            "label": "Like",
+                                                            "value": "like"
+                                                        },
+                                                        {
+                                                            "label": "Like (case insensitive)",
+                                                            "value": "cilike"
+                                                        },
+                                                        {
+                                                            "label": "In",
+                                                            "value": "in"
+                                                        },
+                                                        {
+                                                            "label": "In (case insensitive)",
+                                                            "value": "ciin"
+                                                        },
+                                                        {
+                                                            "label": "Not in",
+                                                            "value": "notin"
+                                                        },
+                                                        {
+                                                            "label": "Not in (case insensitive)",
+                                                            "value": "cinotin"
+                                                        },
+                                                        {
+                                                            "label": "Length equal to",
+                                                            "value": "length_eq"
+                                                        },
+                                                        {
+                                                            "label": "Length less to",
+                                                            "value": "length_lt"
+                                                        },
+                                                        {
+                                                            "label": "Length greater to",
+                                                            "value": "length_gt"
+                                                        },
+                                                        {
+                                                            "label": "Is blank",
+                                                            "value": "isblank"
+                                                        },
+                                                        {
+                                                            "label": "Not blank",
+                                                            "value": "notblank"
+                                                        },
+                                                        {
+                                                            "label": "Between",
+                                                            "value": "between"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "mappable": true
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "__IMTLENGTH__",
+                                        "type": "uinteger",
+                                        "label": "Total number of bundles"
+                                    },
+                                    {
+                                        "name": "__IMTINDEX__",
+                                        "type": "uinteger",
+                                        "label": "Bundle order position"
+                                    },
+                                    {
+                                        "name": "ID",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "endDate",
+                                        "type": "date"
+                                    },
+                                    {
+                                        "name": "objID",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "objObjCode",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "roleID",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "securityRootID",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "securityRootObjCode",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "startDate",
+                                        "type": "date"
+                                    },
+                                    {
+                                        "name": "type",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "type": "text"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 35,
+                            "module": "builtin:BasicRouter",
+                            "version": 1,
+                            "mapper": null,
+                            "metadata": {
+                                "designer": {
+                                    "x": 900,
+                                    "y": 750
+                                }
+                            },
+                            "routes": [
+                                {
+                                    "flow": [
+                                        {
+                                            "id": 19,
+                                            "module": "util:SetVariable2",
+                                            "version": 1,
+                                            "parameters": {},
+                                            "filter": {
+                                                "name": "update Existing rates with timeline to add endDate and startDate accordingly.",
+                                                "conditions": [
+                                                    [
+                                                        {
+                                                            "a": "{{15.`__IMTLENGTH__`}}",
+                                                            "o": "number:greater",
+                                                            "b": "0"
+                                                        }
+                                                    ]
+                                                ]
+                                            },
+                                            "mapper": {
+                                                "name": "objCode",
+                                                "scope": "roundtrip",
+                                                "value": "{{15.objCode}}"
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 1200,
+                                                    "y": 450
+                                                },
+                                                "restore": {
+                                                    "scope": {
+                                                        "label": "One cycle"
+                                                    }
+                                                },
+                                                "expect": [
+                                                    {
+                                                        "name": "name",
+                                                        "type": "text",
+                                                        "label": "Variable name",
+                                                        "mappable": false,
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "scope",
+                                                        "type": "select",
+                                                        "label": "Variable lifetime",
+                                                        "mappable": false,
+                                                        "required": true,
+                                                        "validate": {
+                                                            "enum": [
+                                                                "roundtrip",
+                                                                "execution"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "value",
+                                                        "type": "any",
+                                                        "label": "Variable value",
+                                                        "mappable": false
+                                                    }
+                                                ],
+                                                "interface": [
+                                                    {
+                                                        "name": "objCode",
+                                                        "type": "any",
+                                                        "label": "objCode"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": 20,
+                                            "module": "util:SetVariable2",
+                                            "version": 1,
+                                            "parameters": {},
+                                            "mapper": {
+                                                "name": "endDate",
+                                                "scope": "roundtrip",
+                                                "value": "{{formatDate(ifempty(15.endDate; addDays(6.record.data.`Start Date`; -1)); \"YYYY-MM-DD\")}}"
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 1500,
+                                                    "y": 450
+                                                },
+                                                "restore": {
+                                                    "scope": {
+                                                        "label": "One cycle"
+                                                    }
+                                                },
+                                                "expect": [
+                                                    {
+                                                        "name": "name",
+                                                        "type": "text",
+                                                        "label": "Variable name",
+                                                        "mappable": false,
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "scope",
+                                                        "type": "select",
+                                                        "label": "Variable lifetime",
+                                                        "mappable": false,
+                                                        "required": true,
+                                                        "validate": {
+                                                            "enum": [
+                                                                "roundtrip",
+                                                                "execution"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "value",
+                                                        "type": "any",
+                                                        "label": "Variable value",
+                                                        "mappable": false
+                                                    }
+                                                ],
+                                                "interface": [
+                                                    {
+                                                        "name": "endDate",
+                                                        "type": "any",
+                                                        "label": "endDate"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": 16,
+                                            "module": "builtin:BasicAggregator",
+                                            "version": 1,
+                                            "parameters": {
+                                                "feeder": 15
+                                            },
+                                            "mapper": {
+                                                "ID": "{{15.ID}}",
+                                                "type": "{{15.type}}",
+                                                "value": "{{15.value}}",
+                                                "endDate": "{{20.endDate}}",
+                                                "objCode": "{{19.objCode}}",
+                                                "startDate": "{{15.startDate}}"
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 1800,
+                                                    "y": 450
+                                                },
+                                                "restore": {
+                                                    "feeder": {
+                                                        "label": "Adobe Workfront - Search [15]"
+                                                    },
+                                                    "mapper": {
+                                                        "label": [
+                                                            null,
+                                                            null,
+                                                            null,
+                                                            null,
+                                                            null,
+                                                            null,
+                                                            null
+                                                        ]
+                                                    },
+                                                    "target": {
+                                                        "label": "Custom"
+                                                    }
+                                                },
+                                                "advanced": true
+                                            },
+                                            "flags": {
+                                                "groupBy": "{{15.roleID}}"
+                                            }
+                                        },
+                                        {
+                                            "id": 31,
+                                            "module": "util:GetVariable2",
+                                            "version": 1,
+                                            "parameters": {},
+                                            "filter": {
+                                                "name": "role exists?",
+                                                "conditions": [
+                                                    [
+                                                        {
+                                                            "a": "{{16.`__IMTKEY__`}}",
+                                                            "o": "exist",
+                                                            "b": ""
+                                                        }
+                                                    ]
+                                                ]
+                                            },
+                                            "mapper": {
+                                                "name": "new_value"
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 2100,
+                                                    "y": 450
+                                                },
+                                                "expect": [
+                                                    {
+                                                        "name": "name",
+                                                        "type": "text",
+                                                        "label": "Variable name",
+                                                        "mappable": false,
+                                                        "required": true
+                                                    }
+                                                ],
+                                                "interface": [
+                                                    {
+                                                        "name": "new_value",
+                                                        "type": "any",
+                                                        "label": "new_value"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": 30,
+                                            "module": "util:SetVariable2",
+                                            "version": 1,
+                                            "parameters": {},
+                                            "mapper": {
+                                                "name": "a",
+                                                "scope": "roundtrip",
+                                                "value": "{{merge(31.new_value; 16.array)}}"
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 2400,
+                                                    "y": 450
+                                                },
+                                                "restore": {
+                                                    "scope": {
+                                                        "label": "One cycle"
+                                                    }
+                                                },
+                                                "expect": [
+                                                    {
+                                                        "name": "name",
+                                                        "type": "text",
+                                                        "label": "Variable name",
+                                                        "mappable": false,
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "scope",
+                                                        "type": "select",
+                                                        "label": "Variable lifetime",
+                                                        "mappable": false,
+                                                        "required": true,
+                                                        "validate": {
+                                                            "enum": [
+                                                                "roundtrip",
+                                                                "execution"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "value",
+                                                        "type": "any",
+                                                        "label": "Variable value",
+                                                        "mappable": false
+                                                    }
+                                                ],
+                                                "interface": [
+                                                    {
+                                                        "name": "a",
+                                                        "type": "any",
+                                                        "label": "a"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": 33,
+                                            "module": "json:TransformToJSON",
+                                            "version": 1,
+                                            "parameters": {
+                                                "space": ""
+                                            },
+                                            "mapper": {
+                                                "object": "{{30.a}}"
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 2700,
+                                                    "y": 450
+                                                },
+                                                "restore": {
+                                                    "space": {
+                                                        "label": ""
+                                                    }
+                                                },
+                                                "parameters": [
+                                                    {
+                                                        "name": "space",
+                                                        "type": "select",
+                                                        "label": "Indentation",
+                                                        "mappable": false,
+                                                        "validate": {
+                                                            "enum": [
+                                                                "tab",
+                                                                "2",
+                                                                "4"
+                                                            ]
+                                                        }
+                                                    }
+                                                ],
+                                                "expect": [
+                                                    {
+                                                        "name": "object",
+                                                        "type": "any",
+                                                        "label": "Object",
+                                                        "mappable": false
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": 32,
+                                            "module": "workfront-workfront:custom",
+                                            "version": 2,
+                                            "parameters": {
+                                                "__IMTCONN__": 94619
+                                            },
+                                            "mapper": {
+                                                "qs": [
+                                                    {
+                                                        "key": "action",
+                                                        "value": "editRatesForRole"
+                                                    }
+                                                ],
+                                                "url": "RATE",
+                                                "body": "{\n  \"attachableID\": \"{{6.record.data.`Company ID`}}\",\n  \"attachableObjCode\": \"CMPY\",\n  \"roleID\": \"{{6.record.data.`Role ID (from Job Roles)`[]}}\",\n  \"rates\": {{33.json}}\n}",
+                                                "method": "PUT",
+                                                "headers": [
+                                                    {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 3000,
+                                                    "y": 450
+                                                },
+                                                "restore": {
+                                                    "qs": {
+                                                        "mode": "chose",
+                                                        "items": [
+                                                            "undefined"
+                                                        ]
+                                                    },
+                                                    "method": {
+                                                        "mode": "chose",
+                                                        "label": "PUT"
+                                                    },
+                                                    "headers": {
+                                                        "mode": "chose",
+                                                        "items": [
+                                                            "undefined"
+                                                        ]
+                                                    },
+                                                    "__IMTCONN__": {
+                                                        "label": "CAFE Workfront (Vinay Shah | cafe.my.workfront.com)"
+                                                    },
+                                                    "apiVersionUrl": {
+                                                        "mode": "chose",
+                                                        "label": ""
+                                                    }
+                                                },
+                                                "parameters": [
+                                                    {
+                                                        "name": "__IMTCONN__",
+                                                        "type": "account",
+                                                        "label": "Connection",
+                                                        "mappable": false,
+                                                        "required": true
+                                                    }
+                                                ],
+                                                "expect": [
+                                                    {
+                                                        "name": "url",
+                                                        "type": "text",
+                                                        "label": "URL",
+                                                        "mappable": true,
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "apiVersionUrl",
+                                                        "type": "select",
+                                                        "label": "API Version",
+                                                        "mappable": true
+                                                    },
+                                                    {
+                                                        "name": "pathOverride",
+                                                        "type": "text",
+                                                        "label": "API Path override",
+                                                        "mappable": true
+                                                    },
+                                                    {
+                                                        "name": "method",
+                                                        "type": "select",
+                                                        "label": "Method",
+                                                        "mappable": true,
+                                                        "required": true,
+                                                        "validate": {
+                                                            "enum": [
+                                                                "GET",
+                                                                "POST",
+                                                                "PUT",
+                                                                "DELETE"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "headers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "key",
+                                                                "type": "text",
+                                                                "label": "Key"
+                                                            },
+                                                            {
+                                                                "name": "value",
+                                                                "type": "text",
+                                                                "label": "Value"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Headers",
+                                                        "mappable": true
+                                                    },
+                                                    {
+                                                        "name": "qs",
+                                                        "spec": [
+                                                            {
+                                                                "name": "key",
+                                                                "type": "text",
+                                                                "label": "Key"
+                                                            },
+                                                            {
+                                                                "name": "value",
+                                                                "type": "text",
+                                                                "label": "Value"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Query String",
+                                                        "mappable": true
+                                                    },
+                                                    {
+                                                        "name": "body",
+                                                        "type": "any",
+                                                        "label": "Body",
+                                                        "mappable": true
+                                                    }
+                                                ]
+                                            },
+                                            "onerror": [
+                                                {
+                                                    "id": 34,
+                                                    "module": "builtin:Ignore",
+                                                    "version": 1,
+                                                    "metadata": {
+                                                        "designer": {
+                                                            "x": 3300,
+                                                            "y": 600
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "flow": [
+                                        {
+                                            "id": 38,
+                                            "module": "util:GetVariable2",
+                                            "version": 1,
+                                            "parameters": {},
+                                            "filter": {
+                                                "name": "Company doesn't have any billing Rate add new.",
+                                                "conditions": [
+                                                    [
+                                                        {
+                                                            "a": "{{15.`__IMTLENGTH__`}}",
+                                                            "o": "text:equal",
+                                                            "b": "0"
+                                                        }
+                                                    ]
+                                                ]
+                                            },
+                                            "mapper": {
+                                                "name": "new_value"
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 1200,
+                                                    "y": 1050
+                                                },
+                                                "expect": [
+                                                    {
+                                                        "name": "name",
+                                                        "type": "text",
+                                                        "label": "Variable name",
+                                                        "mappable": false,
+                                                        "required": true
+                                                    }
+                                                ],
+                                                "interface": [
+                                                    {
+                                                        "name": "new_value",
+                                                        "type": "any",
+                                                        "label": "new_value"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": 39,
+                                            "module": "json:TransformToJSON",
+                                            "version": 1,
+                                            "parameters": {
+                                                "space": ""
+                                            },
+                                            "mapper": {
+                                                "object": "{{38.new_value}}"
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 1500,
+                                                    "y": 1050
+                                                },
+                                                "restore": {
+                                                    "space": {
+                                                        "label": ""
+                                                    }
+                                                },
+                                                "parameters": [
+                                                    {
+                                                        "name": "space",
+                                                        "type": "select",
+                                                        "label": "Indentation",
+                                                        "mappable": false,
+                                                        "validate": {
+                                                            "enum": [
+                                                                "tab",
+                                                                "2",
+                                                                "4"
+                                                            ]
+                                                        }
+                                                    }
+                                                ],
+                                                "expect": [
+                                                    {
+                                                        "name": "object",
+                                                        "type": "any",
+                                                        "label": "Object",
+                                                        "mappable": false
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": 36,
+                                            "module": "workfront-workfront:custom",
+                                            "version": 2,
+                                            "parameters": {
+                                                "__IMTCONN__": 94619
+                                            },
+                                            "mapper": {
+                                                "qs": [
+                                                    {
+                                                        "key": "action",
+                                                        "value": "setRatesForRole"
+                                                    }
+                                                ],
+                                                "url": "RATE",
+                                                "body": "{\n  \"attachableID\": \"{{6.record.data.`Company ID`}}\",\n  \"attachableObjCode\": \"CMPY\",\n  \"roleID\": \"{{6.record.data.`Role ID (from Job Roles)`[]}}\",\n  \"rates\": [\n    {\n      \"startDate\": null,\n      \"endDate\": null,\n      \"type\": \"BILLING\",\n      \"value\": \"{{6.record.data.rate}}\"\n    }\n  ],\n  \"currencyCode\": \"USD\"\n}",
+                                                "method": "PUT",
+                                                "headers": [
+                                                    {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 1800,
+                                                    "y": 1050
+                                                },
+                                                "restore": {
+                                                    "qs": {
+                                                        "mode": "chose",
+                                                        "items": [
+                                                            "undefined"
+                                                        ]
+                                                    },
+                                                    "method": {
+                                                        "mode": "chose",
+                                                        "label": "PUT"
+                                                    },
+                                                    "headers": {
+                                                        "mode": "chose",
+                                                        "items": [
+                                                            "undefined"
+                                                        ]
+                                                    },
+                                                    "__IMTCONN__": {
+                                                        "label": "CAFE Workfront (Vinay Shah | cafe.my.workfront.com)"
+                                                    },
+                                                    "apiVersionUrl": {
+                                                        "mode": "chose",
+                                                        "label": ""
+                                                    }
+                                                },
+                                                "parameters": [
+                                                    {
+                                                        "name": "__IMTCONN__",
+                                                        "type": "account",
+                                                        "label": "Connection",
+                                                        "mappable": false,
+                                                        "required": true
+                                                    }
+                                                ],
+                                                "expect": [
+                                                    {
+                                                        "name": "url",
+                                                        "type": "text",
+                                                        "label": "URL",
+                                                        "mappable": true,
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "apiVersionUrl",
+                                                        "type": "select",
+                                                        "label": "API Version",
+                                                        "mappable": true
+                                                    },
+                                                    {
+                                                        "name": "pathOverride",
+                                                        "type": "text",
+                                                        "label": "API Path override",
+                                                        "mappable": true
+                                                    },
+                                                    {
+                                                        "name": "method",
+                                                        "type": "select",
+                                                        "label": "Method",
+                                                        "mappable": true,
+                                                        "required": true,
+                                                        "validate": {
+                                                            "enum": [
+                                                                "GET",
+                                                                "POST",
+                                                                "PUT",
+                                                                "DELETE"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "headers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "key",
+                                                                "type": "text",
+                                                                "label": "Key"
+                                                            },
+                                                            {
+                                                                "name": "value",
+                                                                "type": "text",
+                                                                "label": "Value"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Headers",
+                                                        "mappable": true
+                                                    },
+                                                    {
+                                                        "name": "qs",
+                                                        "spec": [
+                                                            {
+                                                                "name": "key",
+                                                                "type": "text",
+                                                                "label": "Key"
+                                                            },
+                                                            {
+                                                                "name": "value",
+                                                                "type": "text",
+                                                                "label": "Value"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Query String",
+                                                        "mappable": true
+                                                    },
+                                                    {
+                                                        "name": "body",
+                                                        "type": "any",
+                                                        "label": "Body",
+                                                        "mappable": true
+                                                    }
+                                                ]
+                                            },
+                                            "onerror": [
+                                                {
+                                                    "id": 40,
+                                                    "module": "builtin:Ignore",
+                                                    "version": 1,
+                                                    "metadata": {
+                                                        "designer": {
+                                                            "x": 2100,
+                                                            "y": 1200
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "app.workfrontfusion.com"
+    }
+}
