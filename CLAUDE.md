@@ -16,4 +16,4 @@ Then add a row to the scenarios table in the root `README.md`.
 
 - Blueprint JSON filenames use the format `<name>_blueprint-<id>.json`
 - Screenshots are embedded in the folder README — canvas screenshot at the top, source data screenshot under the data model section
-- Connection IDs in blueprints are environment-specific; note the environment in the folder README under Import Instructions
+- Connection IDs in blueprints are environment-specific; document required reconnection under Import Instructions without including personal names, account labels, or tenant domains

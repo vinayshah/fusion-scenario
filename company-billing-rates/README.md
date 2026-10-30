@@ -68,7 +68,7 @@ The screenshot below shows what the source records look like in the Workfront Pl
 2. Create a new scenario
 3. Click `...` → **Import Blueprint**
 4. Select `company_rate_blueprint-302403.json`
-5. Reconnect the Workfront and Workfront Planning connections after import (the blueprint references connection ID `94619` which is environment-specific)
+5. Reconnect the Workfront and Workfront Planning modules using your own connections after import
 
 ## Notes
 

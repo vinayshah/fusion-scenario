@@ -7,6 +7,7 @@ A collection of Workfront Fusion scenario blueprints. Each folder contains a blu
 | Folder | Description |
 |--------|-------------|
 | [company-billing-rates](./company-billing-rates/) | Syncs billing rates from Workfront Planning into Workfront's native billing rate system |
+| [export-all-programs-portfolio-name](./export-all-programs-portfolio-name/) | Builds a CSV of Workfront programs with their portfolio IDs and names |
 
 ## How to Import a Blueprint
 

@@ -35,11 +35,11 @@
                 },
                 "restore": {
                     "__IMTCONN__": {
-                        "label": "CAFE Workfront (Vinay Shah | cafe.my.workfront.com)"
+                        "label": "Workfront connection"
                     },
                     "workspaceID": {
                         "mode": "chose",
-                        "label": "Vinay Shah WorkSpace"
+                        "label": "Planning workspace"
                     },
                     "recordTypeId": {
                         "mode": "chose",
@@ -651,7 +651,7 @@
                                         "label": "All Matching Records"
                                     },
                                     "__IMTCONN__": {
-                                        "label": "CAFE Workfront (Vinay Shah | cafe.my.workfront.com)"
+                                        "label": "Workfront connection"
                                     },
                                     "collections": {
                                         "mode": "chose"
@@ -1355,7 +1355,7 @@
                                                         ]
                                                     },
                                                     "__IMTCONN__": {
-                                                        "label": "CAFE Workfront (Vinay Shah | cafe.my.workfront.com)"
+                                                        "label": "Workfront connection"
                                                     },
                                                     "apiVersionUrl": {
                                                         "mode": "chose",
@@ -1603,7 +1603,7 @@
                                                         ]
                                                     },
                                                     "__IMTCONN__": {
-                                                        "label": "CAFE Workfront (Vinay Shah | cafe.my.workfront.com)"
+                                                        "label": "Workfront connection"
                                                     },
                                                     "apiVersionUrl": {
                                                         "mode": "chose",
